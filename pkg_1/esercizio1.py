@@ -49,9 +49,9 @@ class NewAVLTreeMap(TreeMap):
             if not insert and self.is_leaf(current_node):
                 current_node._node._balance_factor = 0
             elif not insert and self.left(current_node) is None:
-                current_node._node._balance_factor = -1
+                current_node._node._balance_factor -= 1
             elif not insert and self.right(current_node) is None:
-                current_node._node._balance_factor = 1
+                current_node._node._balance_factor += 1
             elif (self.left(current_node) == p and insert) or (self.right(current_node) == p and not insert):
                 current_node._node._balance_factor += 1
             else:
@@ -73,7 +73,7 @@ class NewAVLTreeMap(TreeMap):
 
     def _rebalance_delete(self, p):
         #Recompute balance_factor of parent node deleted
-        self._recompute_balance(p)
+        #self._recompute_balance(p)
         """if abs(p._node._balance_factor) == 2:
             p = self._restructure(self._tall_grandchild(p))
             self._recompute_balance(self.left(p))
