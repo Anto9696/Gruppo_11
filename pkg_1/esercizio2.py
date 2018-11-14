@@ -20,6 +20,7 @@ class Statistics(NewAVLTreeMap):
         except KeyError:
             elem = self.Element(1, v)
             self.__setitem__(k, elem)
+        self._occurrency += 1
 
 
     def len(self):
