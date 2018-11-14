@@ -39,7 +39,7 @@ class Statistics(NewAVLTreeMap):
     def average(self):
         """estituisce la media dei valori di tutte le occorrenze presenti nel
         dataset"""
-        return self._sum / self._occurrency
+        return self._sum / self._occurrency if not self.is_empty() else None
 
     def median(self):
         """restituisce la mediana delle key presenti nel dataset, definita
@@ -52,11 +52,9 @@ class Statistics(NewAVLTreeMap):
         lunghezze delle key, definito come la key k tale che il j per cento delle
         occorrenze del dataset hanno key minori o uguali di k;"""
         pos = round(self._occurrency * j / 100)
-        # print("AAA",pos)
         sum = 0
         for el in self:
             e = self.__getitem__(el)
-            # print(el,"AAAAAAAA", sum)
             sum += e._frequency
             if sum > pos:
                 return el
