@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac5ccf7d-578b-436d-9a78-d8ed70f063fa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/pkg_1/esercizio2_test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg_1/esercizio2.py" beforeDir="false" afterPath="$PROJECT_DIR$/pkg_1/esercizio2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg_1/esercizio1.py" beforeDir="false" afterPath="$PROJECT_DIR$/pkg_1/esercizio1.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -66,25 +65,25 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="2887" />
-          <entry key="txt" value="3" />
+          <entry key="py" value="3189" />
+          <entry key="txt" value="25" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="3" />
-          <entry key="Python" value="2887" />
+          <entry key="PLAIN_TEXT" value="25" />
+          <entry key="Python" value="3189" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pkg_1/esercizio1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-224">
-              <caret column="47" selection-start-column="47" selection-end-column="47" />
+            <state relative-caret-position="68">
+              <caret line="16" column="39" lean-forward="true" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -122,28 +121,28 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/Dropbox/Università/PRIMO ANNO/Tecniche di Programmazione/Esercizi/TdP_collections/tree/linked_binary_tree.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="76" column="6" selection-start-line="76" selection-start-column="6" selection-end-line="76" selection-end-column="6" />
+            <state relative-caret-position="180">
+              <caret line="34" column="11" selection-start-line="34" selection-start-column="11" selection-end-line="34" selection-end-column="11" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pkg_1/esercizio2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
+            <state relative-caret-position="266">
+              <caret line="54" column="15" lean-forward="true" selection-start-line="54" selection-start-column="15" selection-end-line="54" selection-end-column="15" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
-                <marker date="1542202084821" expanded="true" signature="128:130" ph="..." />
-                <marker date="1542202084821" expanded="true" signature="162:167" ph="..." />
-                <marker date="1542202084821" expanded="true" signature="182:191" ph="..." />
-                <marker date="1542202084821" expanded="true" signature="849:854" ph="..." />
-                <marker date="1542202084821" expanded="true" signature="936:975" ph="..." />
-                <marker date="1542202084821" expanded="true" signature="1099:1137" ph="..." />
-                <marker date="1542202084821" expanded="true" signature="1252:1302" ph="..." />
-                <marker date="1542202084821" expanded="true" signature="1564:1605" ph="..." />
-                <marker date="1542202084821" expanded="true" signature="1847:2129" ph="..." />
+                <marker date="1542207290898" expanded="true" signature="128:130" ph="..." />
+                <marker date="1542207290898" expanded="true" signature="162:167" ph="..." />
+                <marker date="1542207290898" expanded="true" signature="182:191" ph="..." />
+                <marker date="1542207290898" expanded="true" signature="849:854" ph="..." />
+                <marker date="1542207290898" expanded="true" signature="936:975" ph="..." />
+                <marker date="1542207290898" expanded="true" signature="1099:1137" ph="..." />
+                <marker date="1542207290898" expanded="true" signature="1252:1335" ph="..." />
+                <marker date="1542207290898" expanded="true" signature="1597:1638" ph="..." />
+                <marker date="1542207290898" expanded="true" signature="1880:2095" ph="..." />
               </folding>
             </state>
           </provider>
@@ -152,8 +151,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pkg_1/esercizio2_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="24" lean-forward="true" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+            <state relative-caret-position="201">
+              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
             </state>
           </provider>
         </entry>
@@ -191,8 +190,9 @@
       <list>
         <option value="$PROJECT_DIR$/pkg_1/NewAVLTreeMap" />
         <option value="$PROJECT_DIR$/pkg_1/NewAVLTreeMap.py" />
-        <option value="$PROJECT_DIR$/pkg_1/esercizio2_test.py" />
         <option value="$PROJECT_DIR$/pkg_1/esercizio2.py" />
+        <option value="$PROJECT_DIR$/pkg_1/esercizio2_test.py" />
+        <option value="$PROJECT_DIR$/pkg_1/esercizio1.py" />
       </list>
     </option>
   </component>
@@ -321,7 +321,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32903227" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32903227" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -340,7 +340,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="es2" />
-    <option name="LAST_COMMIT_MESSAGE" value="es2" />
+    <MESSAGE value="es2 finito" />
+    <MESSAGE value="es2 finito (?)" />
+    <MESSAGE value="es1" />
+    <option name="LAST_COMMIT_MESSAGE" value="es1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -389,20 +392,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Dropbox/Università/PRIMO ANNO/Tecniche di Programmazione/Esercizi/TdP_collections/tree/linked_binary_tree.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="76" column="6" selection-start-line="76" selection-start-column="6" selection-end-line="76" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pkg_1/esercizio1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-224">
-          <caret column="47" selection-start-column="47" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pkg_1/NewAVLTreeMapTest.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -410,29 +399,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pkg_1/esercizio2_test.py">
+    <entry file="file://$PROJECT_DIR$/pkg_1/esercizio2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="24" lean-forward="true" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+        <state relative-caret-position="266">
+          <caret line="54" column="15" lean-forward="true" selection-start-line="54" selection-start-column="15" selection-end-line="54" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+            <marker date="1542207290898" expanded="true" signature="128:130" ph="..." />
+            <marker date="1542207290898" expanded="true" signature="162:167" ph="..." />
+            <marker date="1542207290898" expanded="true" signature="182:191" ph="..." />
+            <marker date="1542207290898" expanded="true" signature="849:854" ph="..." />
+            <marker date="1542207290898" expanded="true" signature="936:975" ph="..." />
+            <marker date="1542207290898" expanded="true" signature="1099:1137" ph="..." />
+            <marker date="1542207290898" expanded="true" signature="1252:1335" ph="..." />
+            <marker date="1542207290898" expanded="true" signature="1597:1638" ph="..." />
+            <marker date="1542207290898" expanded="true" signature="1880:2095" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pkg_1/esercizio2.py">
+    <entry file="file://$PROJECT_DIR$/pkg_1/esercizio2_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-            <marker date="1542202084821" expanded="true" signature="128:130" ph="..." />
-            <marker date="1542202084821" expanded="true" signature="162:167" ph="..." />
-            <marker date="1542202084821" expanded="true" signature="182:191" ph="..." />
-            <marker date="1542202084821" expanded="true" signature="849:854" ph="..." />
-            <marker date="1542202084821" expanded="true" signature="936:975" ph="..." />
-            <marker date="1542202084821" expanded="true" signature="1099:1137" ph="..." />
-            <marker date="1542202084821" expanded="true" signature="1252:1302" ph="..." />
-            <marker date="1542202084821" expanded="true" signature="1564:1605" ph="..." />
-            <marker date="1542202084821" expanded="true" signature="1847:2129" ph="..." />
-          </folding>
+        <state relative-caret-position="201">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Dropbox/Università/PRIMO ANNO/Tecniche di Programmazione/Esercizi/TdP_collections/tree/linked_binary_tree.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="34" column="11" selection-start-line="34" selection-start-column="11" selection-end-line="34" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg_1/esercizio1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="16" column="39" lean-forward="true" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
         </state>
       </provider>
     </entry>
