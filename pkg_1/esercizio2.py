@@ -67,6 +67,7 @@ class Statistics(NewAVLTreeMap):
         for e in self:
             el = self.__getitem__(e)
             list.add(el._frequency,e)
+
         for i in range(self.len()-j):
             list.remove_min()
 
@@ -75,25 +76,5 @@ class Statistics(NewAVLTreeMap):
 
 
 
-if __name__ == "__main__":
-    cacca = Statistics()
-    for i in range(1,10):
-        cacca.add(i,10-i)
-        print("FREQUENZA",cacca[i]._frequency)
-        print("TOTALE",cacca[i]._total)
 
-    for i in range(1,2):
-        cacca.add(i,i)
-        print("FREQUENZA",cacca[i]._frequency)
-        print("TOTALE",cacca[i]._total)
-
-
-    print("LEN",len(cacca))
-    print("MEDIA",cacca.average())
-    print("OCCORRENZE",cacca.occurrences())
-
-    print("PERCENTILE",cacca.percentile())
-
-    for i in cacca.mostFrequent(3):
-        print(i)
 
