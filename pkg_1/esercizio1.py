@@ -1,4 +1,4 @@
-from TdP_collections.map.avl_tree import AVLTreeMap,TreeMap
+from TdP_collections.map.avl_tree import TreeMap
 
 class NewAVLTreeMap(TreeMap):
     """Sorted map implementation using an AVL tree."""
@@ -21,31 +21,74 @@ class NewAVLTreeMap(TreeMap):
 
     #NOTE => Il fattore di bilanciamento e' left_h - right_h
 
+
+    # Return the tallest child and a boolean value --> O(1)
+    # The boolean value is true if tallest child is the left child
     def _tall_child(self, p, favorleft=False):  # parameter controls tiebreaker
         if p._node._balance_factor > 0 or (p._node._balance_factor==0 and favorleft):
-            return self.left(p)
+            return self.left(p),True
         else:
-            return self.right(p)
+            return self.right(p),False
 
+    # Return the tallest grand_child and an integer value "type" --> O(1)
+    # Type = 0 ==> Need a single rotatation left to rebalance
+    # Type = 1 ==> Need a single rotatation right to rebalance
+    # Type = 2 ==> Need a double rotation to rebalance
     def _tall_grandchild(self, p):
-        child = self._tall_child(p)
+        child,sx = self._tall_child(p)
         # if child is on left, favor left grandchild; else favor right grandchild
         alignment = (child == self.left(p))
-        return self._tall_child(child, alignment)
-
-    def _recompute_balance(self,p):
-        if self.is_leaf(p):
-            p._node._balance_factor = 0
-        elif self.left(p) is None:
-            p._node._balance_factor = -1
-        elif self.right(p) is None:
-            p._node._balance_factor = 1
+        grand_child,sx_grandchild = self._tall_child(child, alignment)
+        if sx_grandchild==sx and sx_grandchild:
+            type = 1
+        elif sx_grandchild==sx:
+            type = 0
         else:
-            p._node._balance_factor = self.height(self.left(p)) - self.height(self.right(p))
+            type = 2
+        return grand_child,type
 
+    # Recompute balance factor after a restructure --> O(1)
+    # type is the type of rotation done
+    # parent is the root of restructured tree
+    # balance_grandchild is the balance_factor of the tallest grandchild before restructure
+    def _recompute_balance(self,parent,balance_grandchild,type):
+        left = self.left(parent)
+        right = self.right(parent)
+        if type == 0:
+            if parent._node._balance_factor == 0:
+                left._node._balance_factor = -1
+                parent._node._balance_factor = 1
+            else:
+                left._node._balance_factor = 0
+                parent._node._balance_factor = 0
+        elif type == 1:
+            if parent._node._balance_factor == 0:
+                right._node._balance_factor = 1
+                parent._node._balance_factor = -1
+            else:
+                right._node._balance_factor = 0
+                parent._node._balance_factor = 0
+        elif type == 2:
+            parent._node._balance_factor = 0
+            if balance_grandchild == 0:
+                left._node._balance_factor = 0
+                right._node._balance_factor = 0
+            elif balance_grandchild == -1:
+                left._node._balance_factor = 1
+                right._node._balance_factor = 0
+            elif balance_grandchild == 1:
+                left._node._balance_factor = 0
+                right._node._balance_factor = -1
+            else:
+                raise ValueError("Not balanced Tree")
+        else:
+            raise ValueError("Unavailable Type")
+
+    # Rebalance Tree ---> O(log n) where n are number of node
     def _rebalance(self, p, insert):
         current_node = self.parent(p) if insert else p
         while current_node is not None:
+            # Updating Balance_Factor
             if not insert and self.is_leaf(current_node):
                 current_node._node._balance_factor = 0
             elif not insert and self.left(current_node) is None:
@@ -56,11 +99,14 @@ class NewAVLTreeMap(TreeMap):
                 current_node._node._balance_factor += 1
             else:
                 current_node._node._balance_factor -= 1
+
+            # Need a restructure
             if abs(current_node._node._balance_factor) == 2:
-                current_node = self._restructure(self._tall_grandchild(current_node))
-                self._recompute_balance(self.left(current_node))
-                self._recompute_balance(self.right(current_node))
-                self._recompute_balance(current_node)
+                g_child,type = self._tall_grandchild(current_node)
+                current_node = self._restructure(g_child)
+                self._recompute_balance(current_node,g_child._node._balance_factor,type)
+
+            # Stop conditions
             if (current_node._node._balance_factor == 0 and insert) or (abs(current_node._node._balance_factor) == 1 and not insert):
                 current_node = None
             else:
@@ -72,44 +118,5 @@ class NewAVLTreeMap(TreeMap):
 
 
     def _rebalance_delete(self, p):
-        #Recompute balance_factor of parent node deleted
-        #self._recompute_balance(p)
-        """if abs(p._node._balance_factor) == 2:
-            p = self._restructure(self._tall_grandchild(p))
-            self._recompute_balance(self.left(p))
-            self._recompute_balance(self.right(p))
-            self._recompute_balance(p)"""
         self._rebalance(p, False)
-        """while p is not None:
-            if self.num_children(p) == 1:
-                if self.right(p) is None:
-                    p._node._balance_factor += 1
-                else:
-                    p._node._balance_factor -= 1
-                propagate = False
-            elif self.num_children(p) ==0:
-                p._node._balance_factor = 0
-                propagate = True
-            else:
-                if self.is_leaf(self.right(p)) and self.is_leaf(self.left(p)):
-                    p._node._balance_factor = 0
-                    propagate = True
-                elif self.is_leaf(self.right(p)):
-                    p._node._balance_factor += 1
-                    propagate = False
-                else:
-                    p._node._balance_factor -= 1
-                    propagate = False
-            if abs(p._node._balance_factor) == 2:
-                p = self._restructure(self._tall_grandchild(p))
-                self._recompute_balance(self.left(p))
-                self._recompute_balance(self.right(p))
-                self._recompute_balance(p)
-                propagate = False
-            if propagate:
-                p = self.parent(p)
-            else:
-                p = None"""
-            #if propagate:""
-            #    self._rebalance(p,False)
 

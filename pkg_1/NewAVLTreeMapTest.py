@@ -30,3 +30,8 @@ if __name__=="__main__":
     #Need restruct
     delete_key(tree,2)
     delete_key(tree,0)
+    # Delete All
+    delete_key(tree,7)
+    delete_key(tree,6)
+    delete_key(tree,3)
+    delete_key(tree,8)
