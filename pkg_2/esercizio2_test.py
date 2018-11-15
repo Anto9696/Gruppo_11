@@ -1,4 +1,4 @@
-from pkg_1.esercizio2 import Statistics
+from pkg_2.esercizio2 import Statistics
 
 if __name__ == "__main__":
     stat = Statistics()
