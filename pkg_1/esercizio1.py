@@ -15,7 +15,7 @@ class NewAVLTreeMap(TreeMap):
             return self._left._balance_factor if self._left is not None else None
 
         def right_balance_factor(self):
-            return self._right._balance_factor if self._left is not None else None
+            return self._right._balance_factor if self._right is not None else None
 
     # ------------------------- positional-based utility methods -------------------------
 
