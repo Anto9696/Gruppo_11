@@ -4,7 +4,7 @@ def visual_tree(tree):
     if(isinstance(tree,NewAVLTreeMap)):
         level=""
         for node in tree.breadthfirst():
-            level += "("+str(node.element()._key)+" "+str(node._node._balance_factor)+")"#+str(tree.height(node))+")"
+            level += "("+str(node.element()._key)+" "+str(node._node._balance_factor)+")"
         print(level)
 
 def delete_key(tree,k):
