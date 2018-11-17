@@ -86,16 +86,10 @@ class NewAVLTreeMap(TreeMap):
 
     # Rebalance Tree ---> O(log n) where n are number of node
     def _rebalance(self, p, insert):
-        current_node = self.parent(p) if insert else p
+        current_node = self.parent(p)
         while current_node is not None:
             # Updating Balance_Factor
-            if not insert and self.is_leaf(current_node):
-                current_node._node._balance_factor = 0
-            elif not insert and self.left(current_node) is None:
-                current_node._node._balance_factor -= 1
-            elif not insert and self.right(current_node) is None:
-                current_node._node._balance_factor += 1
-            elif (self.left(current_node) == p and insert) or (self.right(current_node) == p and not insert):
+            if (self.left(current_node) == p and insert) or (self.right(current_node) == p and not insert):
                 current_node._node._balance_factor += 1
             else:
                 current_node._node._balance_factor -= 1
@@ -118,5 +112,25 @@ class NewAVLTreeMap(TreeMap):
 
 
     def _rebalance_delete(self, p):
-        self._rebalance(p, False)
+        if p is not None:
+            if self.is_leaf(p):
+                p._node._balance_factor = 0
+            elif self.left(p) is None:
+                p._node._balance_factor -= 1
+            elif self.right(p) is None:
+                p._node._balance_factor += 1
+            elif self.is_leaf(self.left(p)) and self.is_leaf(self.right(p)):
+                p._node._balance_factor = 0
+            elif self.is_leaf(self.left(p)):
+                p._node._balance_factor -= 1
+            elif self.is_leaf(self.right(p)):
+                p._node._balance_factor += 1
+
+            if abs(p._node._balance_factor) == 2:
+                g_child, type = self._tall_grandchild(p)
+                p = self._restructure(g_child)
+                self._recompute_balance(p, g_child._node._balance_factor, type)
+
+            if p._node._balance_factor == 0:
+                self._rebalance(p,False)
 
