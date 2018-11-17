@@ -1,5 +1,5 @@
 from pkg_1.esercizio1 import NewAVLTreeMap
-from TdP_collections.priority_queue.sorted_priority_queue import SortedPriorityQueue
+from TdP_collections.priority_queue.heap_priority_queue import HeapPriorityQueue
 
 
 class Statistics(NewAVLTreeMap):
@@ -61,7 +61,7 @@ class Statistics(NewAVLTreeMap):
 
     def mostFrequent(self, j):
         """restituisce la lista delle j key più frequenti"""
-        list = SortedPriorityQueue()
+        list = HeapPriorityQueue()
         for e in self:
             el = self.__getitem__(e)
             list.add(el._frequency,e)
