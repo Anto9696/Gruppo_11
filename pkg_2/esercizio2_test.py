@@ -36,5 +36,8 @@ if __name__ == "__main__":
     print("PERCENTILE", stat.percentile())
 
     print("PIU' FREQUENTI")
-    for i in stat.mostFrequent(9):
+    # for i in stat.mostFrequent(5):
+    #     print(i)
+    mf = stat.mostFrequent(5)
+    for i in mf:
         print(i)

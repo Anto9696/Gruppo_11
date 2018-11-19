@@ -77,8 +77,11 @@ class Statistics(NewAVLTreeMap):
         for i in range(self.len()-j):
             list.remove_min()
 
+        container = [None]*j
         for i in range(j):
-            yield list.remove_min()[1]
+            container[j-i-1] = list.remove_min()[1]
+
+        return container
 
 
 
