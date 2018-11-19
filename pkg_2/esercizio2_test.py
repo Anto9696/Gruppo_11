@@ -1,7 +1,7 @@
 from pkg_2.esercizio2 import Statistics
 
 if __name__ == "__main__":
-    stat = Statistics()
+    stat = Statistics("nomeFile")
     print("LISTA VUOTA")
     print("LEN", len(stat))
     print("MEDIA", stat.average())

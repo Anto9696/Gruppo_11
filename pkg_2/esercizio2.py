@@ -1,6 +1,7 @@
 from pkg_1.esercizio1 import NewAVLTreeMap
 from TdP_collections.priority_queue.heap_priority_queue import HeapPriorityQueue
-
+import json
+import os
 
 class Statistics(NewAVLTreeMap):
     class _Element:
@@ -8,10 +9,23 @@ class Statistics(NewAVLTreeMap):
             self._frequency = f
             self._total = t
 
-    def __init__(self):
+    def __init__(self, file):
         super().__init__()
+        dir = "testing_folder"#input("Inserire una cartella ")
         self._occurrency = 0
         self._sum = 0
+        if os.path.isfile(dir+"/"+file+".json"):
+            data = json.load(open(dir+"/"+file+".json","r"))
+            for d in data:
+                self.add(d, data[d])
+
+
+
+
+
+
+
+
 
     def add(self, k, v):
         """aggiunge la coppia (k, v) alla mappa; se la chiave k è già presente
