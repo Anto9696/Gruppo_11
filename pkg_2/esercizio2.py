@@ -17,15 +17,7 @@ class Statistics(NewAVLTreeMap):
         if os.path.isfile(dir+"/"+file+".json"):
             data = json.load(open(dir+"/"+file+".json","r"))
             for d in data:
-                self.add(int(d),int(data[d]))
-
-
-
-
-
-
-
-
+                self.add(int(d),data[d])
 
     def add(self, k, v):
         """aggiunge la coppia (k, v) alla mappa; se la chiave k è già presente
