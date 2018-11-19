@@ -17,7 +17,7 @@ class Statistics(NewAVLTreeMap):
         if os.path.isfile(dir+"/"+file+".json"):
             data = json.load(open(dir+"/"+file+".json","r"))
             for d in data:
-                self.add(d, data[d])
+                self.add(int(d),int(data[d]))
 
 
 
