@@ -15,7 +15,9 @@ class Statistics(NewAVLTreeMap):
         self._occurrency = 0
         self._sum = 0
         if os.path.isfile(dir+"/"+file+".json"):
-            data = json.load(open(dir+"/"+file+".json","r"))
+            conn=open(dir+"/"+file+".json","r");
+            data = json.load(conn)
+            conn.close()
             for d in data:
                 self.add(int(d),data[d])
 
@@ -76,7 +78,7 @@ class Statistics(NewAVLTreeMap):
             list.remove_min()
 
         for i in range(j):
-            yield list.remove_min()[0]
+            yield list.remove_min()[1]
 
 
 
