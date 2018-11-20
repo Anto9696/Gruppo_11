@@ -59,12 +59,13 @@ class Statistics(NewAVLTreeMap):
         """restituisce il j-imo percentile, per j = 1, … 99, delle
         lunghezze delle key, definito come la key k tale che il j per cento delle
         occorrenze del dataset hanno key minori o uguali di k;"""
-        pos = round(self._occurrency * j / 100)
+        pos = (self._occurrency * j / 100)
+        print(pos)
         sum = 0
         for el in self:
             e = self.__getitem__(el)
             sum += e._frequency
-            if sum >= pos:
+            if sum > pos:
                 return el
 
     def mostFrequent(self, j):
