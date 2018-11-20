@@ -1,6 +1,6 @@
 from pkg_1.esercizio1 import NewAVLTreeMap
 from TdP_collections.priority_queue.heap_priority_queue import HeapPriorityQueue
-
+import os
 
 class Statistics(NewAVLTreeMap):
     class _Element:
@@ -8,10 +8,17 @@ class Statistics(NewAVLTreeMap):
             self._frequency = f
             self._total = t
 
-    def __init__(self):
+    def __init__(self, file):
         super().__init__()
+        dir = "testing_folder"#input("Inserire una cartella ")
         self._occurrency = 0
         self._sum = 0
+        if os.path.isfile(dir+"/"+file+".txt"):
+            conn=open(dir+"/"+file+".txt","r")
+            data = conn.readlines()
+            for d in data:
+                [k, v] = d.split(" ")
+                self.add(int(k),int(v))
 
     def add(self, k, v):
         """aggiunge la coppia (k, v) alla mappa; se la chiave k è già presente
@@ -51,7 +58,8 @@ class Statistics(NewAVLTreeMap):
         """restituisce il j-imo percentile, per j = 1, … 99, delle
         lunghezze delle key, definito come la key k tale che il j per cento delle
         occorrenze del dataset hanno key minori o uguali di k;"""
-        pos = round(self._occurrency * j / 100)
+        pos = (self._occurrency * j / 100)
+        print(pos)
         sum = 0
         for el in self:
             e = self.__getitem__(el)
@@ -69,8 +77,11 @@ class Statistics(NewAVLTreeMap):
         for i in range(self.len()-j):
             list.remove_min()
 
+        container = [None]*j
         for i in range(j):
-            yield list.remove_min()[0]
+            container[j-i-1] = list.remove_min()[1]
+
+        return container
 
 
 
