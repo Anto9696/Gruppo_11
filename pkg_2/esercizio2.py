@@ -70,16 +70,18 @@ class Statistics(NewAVLTreeMap):
     def mostFrequent(self, j):
         """restituisce la lista delle j key più frequenti"""
         list = HeapPriorityQueue()
+
+        # Complessita O(n*log j)
         for e in self:
             el = self.__getitem__(e)
-            list.add(el._frequency,e)
+            if len(list) < j or list.min()[0]<el._frequency:
+                if len(list) == j:
+                    list.remove_min()
+                list.add(el._frequency,e)
 
-        for i in range(self.len()-j):
-            list.remove_min()
-
-        container = [None]*j
+        container = [None] * j
         for i in range(j):
-            container[j-i-1] = list.remove_min()[1]
+            container[j - i - 1] = list.remove_min()[1]
 
         return container
 
