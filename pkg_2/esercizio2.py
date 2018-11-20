@@ -14,12 +14,12 @@ class Statistics(NewAVLTreeMap):
         dir = "testing_folder"#input("Inserire una cartella ")
         self._occurrency = 0
         self._sum = 0
-        if os.path.isfile(dir+"/"+file+".json"):
-            conn=open(dir+"/"+file+".json","r");
-            data = json.load(conn)
-            conn.close()
+        if os.path.isfile(dir+"/"+file+".txt"):
+            conn=open(dir+"/"+file+".txt","r")
+            data = conn.readlines()
             for d in data:
-                self.add(int(d),data[d])
+                [k, v] = d.split(" ")
+                self.add(int(k),int(v))
 
     def add(self, k, v):
         """aggiunge la coppia (k, v) alla mappa; se la chiave k è già presente
@@ -64,7 +64,7 @@ class Statistics(NewAVLTreeMap):
         for el in self:
             e = self.__getitem__(el)
             sum += e._frequency
-            if sum > pos:
+            if sum >= pos:
                 return el
 
     def mostFrequent(self, j):
