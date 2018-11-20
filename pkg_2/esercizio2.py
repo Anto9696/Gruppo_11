@@ -1,6 +1,5 @@
 from pkg_1.esercizio1 import NewAVLTreeMap
 from TdP_collections.priority_queue.heap_priority_queue import HeapPriorityQueue
-import json
 import os
 
 class Statistics(NewAVLTreeMap):
