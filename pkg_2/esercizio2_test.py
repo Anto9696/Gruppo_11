@@ -7,25 +7,25 @@ if __name__ == "__main__":
     print("OCCORRENZE", stat.occurrences())
     print("PERCENTILE", stat.percentile())
 
-    print("INSERISCO VALORI")
-    for i in range(1,10):
-        stat.add(i, i)
-        # print("key ", i)
-        # print("FREQUENZA", stat[i]._frequency)
-        # print("TOTALE", stat[i]._total)
-
-    print("SECONDO FOR")
-    for i in range(1,3):
-        stat.add(i, i)
-        # print("key ", i)
-        # print("FREQUENZA", stat[i]._frequency)
-        # print("TOTALE", stat[i]._total)
-
-    stat.add(2, 2)
+    # print("INSERISCO VALORI")
+    # for i in range(1,10):
+    #     stat.add(i, i)
+    #     # print("key ", i)
+    #     # print("FREQUENZA", stat[i]._frequency)
+    #     # print("TOTALE", stat[i]._total)
+    #
+    # print("SECONDO FOR")
+    # for i in range(1,3):
+    #     stat.add(i, i)
+    #     # print("key ", i)
+    #     # print("FREQUENZA", stat[i]._frequency)
+    #     # print("TOTALE", stat[i]._total)
+    #
+    # stat.add(2, 2)
     # print("key ", 2)
     # print("FREQUENZA", stat[1]._frequency)
     # print("TOTALE", stat[1]._total)
-    # print("LEN", len(stat))
+    print("LEN", stat.len())
     print("MEDIA", stat.average())
     print("OCCORRENZE", stat.occurrences())
 

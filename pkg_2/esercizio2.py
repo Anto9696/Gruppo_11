@@ -37,7 +37,7 @@ class Statistics:
 
     def len(self):
         """restituisce il numero di chiavi presenti nella mappa;"""
-        return self._newAVLTreeMap.__len__()
+        return len(self._newAVLTreeMap)
 
     def occurrences(self):
         """restituisce la somma delle frequenze di tutti gli elementi
