@@ -11,11 +11,10 @@ class Statistics:
 
     def __init__(self, file):
         self._newAVLTreeMap = NewAVLTreeMap()
-        dir = "testing_folder"  # input("Inserire una cartella ")
         self._occurrency = 0
         self._sum = 0
-        if os.path.isfile(dir + "/" + file + ".txt"):
-            conn = open(dir + "/" + file + ".txt", "r")
+        if os.path.isfile(file):
+            conn = open(file, "r")
             data = conn.readlines()
             for d in data:
                 [k, v] = d.split(" ")
@@ -25,13 +24,13 @@ class Statistics:
         """aggiunge la coppia (k, v) alla mappa; se la chiave k è già presente
         nella mappa deve aggiornare i campi frequency e total"""
         try:
-            el = self._newAVLTreeMap.__getitem__(k)
+            el = self._newAVLTreeMap[k]
             el._frequency += 1
             el._total += v
-            self._newAVLTreeMap.__setitem__(k, el)
+            self._newAVLTreeMap[k] = el
         except KeyError:
             elem = self._Element(1, v)
-            self._newAVLTreeMap.__setitem__(k, elem)
+            self._newAVLTreeMap[k]= elem
         self._sum += v
         self._occurrency += 1
 
@@ -47,7 +46,10 @@ class Statistics:
     def average(self):
         """estituisce la media dei valori di tutte le occorrenze presenti nel
         dataset"""
-        return self._sum / self._occurrency if not self._newAVLTreeMap.is_empty() else None
+        if not self._newAVLTreeMap.is_empty():
+            return self._sum / self._occurrency
+        else:
+            raise ValueError("The object is empty")
 
     def median(self):
         """restituisce la mediana delle key presenti nel dataset, definita
@@ -60,29 +62,24 @@ class Statistics:
         lunghezze delle key, definito come la key k tale che il j per cento delle
         occorrenze del dataset hanno key minori o uguali di k;"""
         pos = (self._occurrency * j / 100)
-        print(pos)
         sum = 0
-        for el in self._newAVLTreeMap:
-            e = self._newAVLTreeMap.__getitem__(el)
-            sum += e._frequency
+        for e in self._newAVLTreeMap.items():
+            sum += e[1]._frequency
             if sum > pos:
-                return el
+                return e[0]
 
     def mostFrequent(self, j):
         """restituisce la lista delle j key più frequenti"""
         list = HeapPriorityQueue()
 
-        # Complessita O(n*log j)
-        for e in self._newAVLTreeMap:
-            el = self._newAVLTreeMap.__getitem__(e)
-            if len(list) < j or list.min()[0] < el._frequency:
+        for e in self._newAVLTreeMap.items():
+            if len(list) < j or list.min()[0] < e[1]._frequency:
                 if len(list) == j:
                     list.remove_min()
-                list.add(el._frequency, e)
+                list.add(e[1]._frequency, e[0])
 
         container = [None] * j
         for i in range(j):
             container[j - i - 1] = list.remove_min()[1]
 
         return container
-

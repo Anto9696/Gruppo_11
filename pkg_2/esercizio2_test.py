@@ -1,8 +1,9 @@
 from pkg_2.esercizio2 import Statistics
 
 if __name__ == "__main__":
-    stat = Statistics("nomeFile")
+    stat = Statistics("testing_folder/nomeFile.txt")
     # print("LEN", len(stat))
+
     print("MEDIA", stat.average())
     print("OCCORRENZE", stat.occurrences())
     print("PERCENTILE", stat.percentile())

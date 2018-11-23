@@ -21,6 +21,8 @@ class NewAVLTreeMap(TreeMap):
 
     #NOTE => Il fattore di bilanciamento e' left_h - right_h
 
+    def retrieve_balance_factor(self,p):
+        return p._node._balance_factor
 
     # Return the tallest child and a boolean value --> O(1)
     # The boolean value is true if tallest child is the left child
