@@ -2,7 +2,8 @@ import os
 import hashlib
 
 def find_repetition(dir):
-    """Presa la directory dir, restituisce un dizionario contenente le liste dei che sono tra loro file duplicati"""
+    """Presa la directory dir, restituisce un dizionario contenente le liste dei che sono tra loro file duplicati.
+       Se un file non ha duplicati sarà l'unico elemento della lista a cui appartiene. Complessità O(n) con n numero di file"""
     file_tab = {}
     for file in os.listdir(dir):
         try:
@@ -19,7 +20,8 @@ def find_repetition(dir):
     return file_tab
 
 def find_repetition_2(dir):
-    """Presa la directory dir, restituisce un dizionario contenente le liste dei che sono tra loro file duplicati"""
+    """Presa la directory dir, restituisce un dizionario contenente le liste dei che sono tra loro file duplicati.
+       Se un file non ha duplicati sarà l'unico elemento della lista a cui appartiene. Complessità O(n) con n numero di file"""
     file_tab = {}
     for file in os.listdir(dir):
         try:
