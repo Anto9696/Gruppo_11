@@ -36,6 +36,6 @@ if __name__ == "__main__":
     print("PIU' FREQUENTI")
     # for i in stat.mostFrequent(5):
     #     print(i)
-    mf = stat.mostFrequent(2)
+    mf = stat.mostFrequent(3)
     for i in mf:
         print(i)
