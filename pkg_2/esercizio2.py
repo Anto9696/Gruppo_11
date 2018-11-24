@@ -26,6 +26,8 @@ class Statistics:
         nella mappa deve aggiornare i campi frequency e total"""
         if self._type_key != type(k):
             raise TypeError("k is not a good key")
+        if type(v) != int:
+            raise TypeError("v is not integer")
         try:
             el = self._newAVLTreeMap[k]
             el._frequency += 1
