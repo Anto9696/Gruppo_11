@@ -9,20 +9,23 @@ class Statistics:
             self._frequency = f
             self._total = t
 
-    def __init__(self, file):
+    def __init__(self, file, type_key=int):
         self._newAVLTreeMap = NewAVLTreeMap()
         self._occurrency = 0
         self._sum = 0
+        self._type_key = type_key
         if os.path.isfile(file):
             conn = open(file, "r")
             data = conn.readlines()
             for d in data:
                 [k, v] = d.split(" ")
-                self.add(int(k), int(v))
+                self.add(self._type_key(k), self._type_key(v))
 
     def add(self, k, v):
         """aggiunge la coppia (k, v) alla mappa; se la chiave k è già presente
         nella mappa deve aggiornare i campi frequency e total"""
+        if self._type_key != type(k):
+            raise TypeError("k is not a good key")
         try:
             el = self._newAVLTreeMap[k]
             el._frequency += 1

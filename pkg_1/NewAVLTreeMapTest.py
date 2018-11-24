@@ -65,7 +65,7 @@ if __name__ == "__main__":
     delete_key(tree,test_tree,5)
     # Deleting a node with two children
     delete_key(tree,test_tree,1)
-    #Need restructure
+    # Need restructure
     delete_key(tree,test_tree,2)
     delete_key(tree,test_tree,0)
     # Delete All
