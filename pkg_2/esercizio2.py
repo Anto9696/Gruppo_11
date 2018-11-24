@@ -66,6 +66,9 @@ class Statistics:
         """restituisce il j-imo percentile, per j = 1, … 99, delle
         lunghezze delle key, definito come la key k tale che il j per cento delle
         occorrenze del dataset hanno key minori o uguali di k;"""
+        if j <= 0:
+            raise ValueError("j deve essere positivo")
+
         pos = (self._occurrency * j / 100)
         sum = 0
         for e in self._newAVLTreeMap.items():
@@ -75,6 +78,9 @@ class Statistics:
 
     def mostFrequent(self, j):
         """restituisce la lista delle j key più frequenti"""
+        if j <= 0:
+            raise ValueError("j deve essere positivo")
+
         list = HeapPriorityQueue()
 
         for e in self._newAVLTreeMap.items():
