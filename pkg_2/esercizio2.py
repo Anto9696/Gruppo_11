@@ -19,7 +19,7 @@ class Statistics:
             data = conn.readlines()
             for d in data:
                 [k, v] = d.split(" ")
-                self.add(self._type_key(k), self._type_key(v))
+                self.add(self._type_key(k), int(v))
 
     def add(self, k, v):
         """aggiunge la coppia (k, v) alla mappa; se la chiave k è già presente
