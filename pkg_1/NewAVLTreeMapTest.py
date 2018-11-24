@@ -74,6 +74,16 @@ if __name__ == "__main__":
     delete_key(tree,test_tree,3)
     delete_key(tree,test_tree,8)
 
+    for i in range(10):
+        tree[-i]=i
+        test_tree[-i]=i
+        print("INSERT "+str(-i))
+        verify(tree,test_tree)
+
+    for i in range(10):
+        delete_key(tree,test_tree,-i)
+
+    print("Albero Vuoto!")
     i = scegli()
     while i!=4:
         if i == 1:
