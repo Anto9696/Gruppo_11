@@ -7,7 +7,7 @@ def find_repetition(dir):
     file_tab = {}
     for file in os.listdir(dir):
         try:
-            hasher = hashlib.sha1()
+            hasher = hashlib.sha256()
             with open(dir+"/"+file,"r") as f:
                 buffer = f.read()
                 hasher.update(buffer.encode())
